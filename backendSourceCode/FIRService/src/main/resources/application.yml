@@ -1,0 +1,16 @@
+server:
+  port: 8086
+spring:
+  application:
+    name: FIR-MANAGEMENT-SERVICE
+  data:
+    mongodb:
+      uri: mongodb://bengal-tigers-db-admin:db-admin-bengal-tigers@77.37.44.176:27017/
+      database: FIR_DB
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
