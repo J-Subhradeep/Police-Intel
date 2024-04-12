@@ -6,7 +6,7 @@ spring:
   datasource:
     username: bengal-tigers-management
     url: jdbc:mysql://*****/ManagementDB
-    password: db-admin-bengal-tigers
+    password: *****
   jpa:
     properties:
       hibernate:
