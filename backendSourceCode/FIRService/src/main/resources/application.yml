@@ -2,7 +2,7 @@ server:
   port: 8086
 spring:
   application:
-    name: FIR-MANAGEMENT-SERVICE-LOCAL
+    name: FIR-MANAGEMENT-SERVICE
   data:
     mongodb:
       uri: mongodb://******/
