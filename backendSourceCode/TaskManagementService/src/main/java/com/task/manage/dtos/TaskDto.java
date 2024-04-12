@@ -9,7 +9,7 @@ public class TaskDto {
 	private String description;
 	private long assignedById;
 	private long assignedToId;
-	private String deadline;
+	private Integer deadline;
 	private String assignedTime;
 	private Boolean isDone;
 	private String file;

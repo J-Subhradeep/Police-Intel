@@ -21,15 +21,23 @@ import lombok.AllArgsConstructor;
 public class TaskService {
 	private TaskRepository taskRepo;
 	
+	
+	
 	public ApiResponse addNewTask(TaskDto taskDto) {
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
 		Task task = new Task();
 		task.setTitle(taskDto.getTitle());
 		task.setDescription(taskDto.getDescription());
 		task.setAssignedById(taskDto.getAssignedById());
 		task.setAssignedToId(taskDto.getAssignedToId());
-		task.setDeadline(taskDto.getDeadline());
+		
+		Integer deadlineDays = taskDto.getDeadline();
+		task.setDeadline(ZonedDateTime.now(ZoneId.of("Asia/Kolkata")).plusDays(deadlineDays).format(formatter)+"+05:30");
+		
+//		task.setDeadline(taskDto.getDeadline());
 		task.setFile(taskDto.getFile());
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
+		
+		
 		task.setAssignedTime(ZonedDateTime.now(ZoneId.of("Asia/Kolkata")).format(formatter)+"+05:30");
 		task.setIsDone(false);
 		task.setPoliceStationId(taskDto.getPoliceStationId());
@@ -40,21 +48,10 @@ public class TaskService {
 		return new ApiResponse(message,success);
 	}
 	
-	public TaskDto getTaskById(long id) {
+	public Task getTaskById(long id) {
 		Optional<Task> task = taskRepo.findById(id);
 		if(task.isPresent()) {
-			TaskDto taskDto = new TaskDto();
-			taskDto.setTitle(task.get().getTitle());
-			taskDto.setDescription(task.get().getDescription());
-			taskDto.setAssignedById(task.get().getAssignedById());
-			taskDto.setAssignedToId(task.get().getAssignedToId());
-			taskDto.setAssignedTime(task.get().getAssignedTime());
-			taskDto.setDeadline(task.get().getDeadline());
-			taskDto.setFile(task.get().getFile());
-			taskDto.setId(id);
-			taskDto.setIsDone(task.get().getIsDone());
-			taskDto.setPoliceStationId(task.get().getPoliceStationId());
-			return taskDto;
+			return task.get();
 		} else {
 			throw new RuntimeException("Invalid task");
 		}

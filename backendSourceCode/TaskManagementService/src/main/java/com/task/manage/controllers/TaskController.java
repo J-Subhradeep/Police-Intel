@@ -32,8 +32,8 @@ public class TaskController {
 	}
 	
 	@GetMapping("/get-task")
-	public TaskDto getTaskById(@RequestParam long id) {
-		TaskDto task = taskService.getTaskById(id);
+	public Task getTaskById(@RequestParam long id) {
+		Task task = taskService.getTaskById(id);
 		return task;
 	}
 	

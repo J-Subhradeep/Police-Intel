@@ -27,9 +27,16 @@ public class TaskUpdateService {
 	public ApiResponse addNewTaskUpdate(TaskUpdateDto taskUpdateDto) {
 		Optional<Task> task = taskRepo.findById(taskUpdateDto.getTaskId());
 		if(task.isPresent()) {
+			Task taskObject  = task.get();
+			String deadlineString = taskObject.getDeadline();
+			ZonedDateTime deadline  = ZonedDateTime.parse(deadlineString);
+			ZonedDateTime currentTime = ZonedDateTime.now(ZoneId.of("Asia/Kolkata"));
+//			System.out.println(deadline);
+//			System.out.println(currentTime);
+//			System.out.println(deadline.isAfter(currentTime));
 			if(task.get().getIsDone()) {
 				throw new RuntimeException("Task is alredy done");
-			} else {
+			} else if(deadline.isAfter(currentTime)) {
 				TaskUpdate taskUpdate = new TaskUpdate();
 				taskUpdate.setTitle(taskUpdateDto.getTitle());
 				taskUpdate.setTaskId(taskUpdateDto.getTaskId());
@@ -45,9 +52,13 @@ public class TaskUpdateService {
 				TaskUpdate savedTaskUpdate = taskUpdtaeRepo.save(taskUpdate);
 			
 				
-				String message = "Task update for task id: " + taskUpdateDto.getTaskId() + " saved with id: " + savedTaskUpdate.getId();
+				String message = "";
+				message = "Task update for task id: " + taskUpdateDto.getTaskId() + " saved with id: " + savedTaskUpdate.getId();
 				Boolean success  = true;
 				return new ApiResponse(message,success);
+			}
+			else {
+				throw new RuntimeException("Deadline Missed !!!");
 			}
 		}else {
 			throw new RuntimeException("Invalid Task");
