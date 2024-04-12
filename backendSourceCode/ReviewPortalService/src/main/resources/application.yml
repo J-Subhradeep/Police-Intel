@@ -1,0 +1,26 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: REVIEW-PORTAL-SERVICE
+    
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    username: bengal-tigers-review
+    url: jdbc:mysql://*****/ReviewDB
+    password: *****
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: Asia/Calcutta
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://*****/eureka
