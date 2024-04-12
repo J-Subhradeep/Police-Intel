@@ -2,7 +2,7 @@ spring:
   datasource:
     username: bengal-tigers-task-management
     url: jdbc:mysql://*****/TaskManagementDB
-    password: db-admin-bengal-tigers
+    password: *****
   application:
     name: TASK-MANAGEMENT-SERVICE
   jpa:
