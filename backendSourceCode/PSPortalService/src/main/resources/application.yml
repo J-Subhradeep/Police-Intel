@@ -2,7 +2,7 @@ spring:
   datasource:
     username: bengal-tigers
     url: jdbc:mysql://*****/FeedbackSystemDB
-    password: db-admin-bengal-tigers
+    password: ******
   application:
     name: PS-PORTAL-SERVICE
   jpa:
