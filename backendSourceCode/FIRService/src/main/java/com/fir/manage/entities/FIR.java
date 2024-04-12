@@ -33,6 +33,8 @@ public class FIR{
 	private String act_section;
 	private List<String> crime_catagory_list;
 	private String submissionTime;
+	private Boolean investigationStarted;
+	private String investigationStartDate;
 	private Boolean isClosed;
 }
 

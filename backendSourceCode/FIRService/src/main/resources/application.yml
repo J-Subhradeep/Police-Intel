@@ -2,10 +2,10 @@ server:
   port: 8086
 spring:
   application:
-    name: FIR-MANAGEMENT-SERVICE
+    name: FIR-MANAGEMENT-SERVICE-LOCAL
   data:
     mongodb:
-      uri: mongodb://bengal-tigers-db-admin:db-admin-bengal-tigers@77.37.44.176:27017/
+      uri: mongodb://*****/
       database: FIR_DB
 
 eureka:

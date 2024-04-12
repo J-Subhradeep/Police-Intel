@@ -96,6 +96,10 @@ public class FIRService {
 		return new APIResponse(message,success);
 	}
 	
+	public Optional<FIR> getFIRById(UUID id){
+		return firRepository.findById(id);
+	}
+	
 	public List<FIR> getFIR() {
 		return firRepository.findAll();
 	}
