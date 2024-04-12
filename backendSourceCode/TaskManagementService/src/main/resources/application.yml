@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    username: bengal-tigers-task-management
+    url: jdbc:mysql://*****/TaskManagementDB
+    password: db-admin-bengal-tigers
+  application:
+    name: TASK-MANAGEMENT-SERVICE
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: Asia/Calcutta
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+eureka:
+  client:
+    service-url:
+      defaultZone: http://*****/eureka
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    prefer-ip-address: true
+server:
+  port: 8085
