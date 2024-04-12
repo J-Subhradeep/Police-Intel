@@ -5,7 +5,7 @@ spring:
     name: FIR-MANAGEMENT-SERVICE-LOCAL
   data:
     mongodb:
-      uri: mongodb://*****/
+      uri: mongodb://******/
       database: FIR_DB
 
 eureka:
