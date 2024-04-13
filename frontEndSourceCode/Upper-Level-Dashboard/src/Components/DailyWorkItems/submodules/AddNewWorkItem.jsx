@@ -7,7 +7,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import axios from 'axios';
 import police from '../../../assets/police.webp'
 import { useNavigate } from 'react-router-dom';
-import { elasticSearchPassword, elasticSearchUserName } from '../../../GlobalConfig/config';
+import { baseUrls, elasticSearchPassword, elasticSearchUserName } from '../../../GlobalConfig/config';
 
 const profiles = [
     { id: 1, name: 'John Doe', designation: 'Software Engineer' },
@@ -109,7 +109,7 @@ const AddNewWorkItem = () => {
         try {
             const userResponse = await axios({
                 method: 'post',  // Use 'post' method for sending data in the request body
-                url: 'https://elasticsearchget.web-project.in/officer_repository/_search',
+                url: `${baseUrls.elasticSearchUrl}/officer_repository/_search`,
                 headers: {
                     Authorization: "Basic " + btoa(elasticSearchUserName + ":" + elasticSearchPassword),
                     'Content-Type': 'application/json',
@@ -150,7 +150,7 @@ const AddNewWorkItem = () => {
     function addWorkFunc(workData) {
 
         axios
-            .post('https://api.web-project.in/task/manage/job/add-job', workData, {
+            .post(`${baseUrls.backEndUrl}/task/manage/job/add-job`, workData, {
                 headers: {
                   Authorization:
                     `Bearer ${localStorage.getItem('token')}`,

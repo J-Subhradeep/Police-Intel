@@ -31,16 +31,6 @@ export const VisitorLogBookMain = () => {
         <VisitorLogBookWrapper>
             <div className='dashboard_main'>
                 <Grid sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', }} container spacing={2}>
-                    {/* <Grid sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', }} xs={3.5}>
-                        <div className='dashboard_components' onClick={heandleClick1}>
-                            <Stack sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', }} spacing={2}>
-                                <img className='dashboard_image' src={visitors} />
-                                <Typography variant='h6'>
-                                    Enter Visitor Details
-                                </Typography>
-                            </Stack>
-                        </div>
-                    </Grid> */}
                     <Grid sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', }} xs={3.5}>
                         <div className='dashboard_components' onClick={heandleClick2}>
                             <Stack sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', }} spacing={2}>

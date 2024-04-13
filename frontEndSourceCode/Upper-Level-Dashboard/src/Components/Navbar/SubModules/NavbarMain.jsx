@@ -17,49 +17,6 @@ import axios from 'axios';
 
 const NavbarMain = () => {
 
-  // const [psData, setPsData] = React.useState({
-  //   psName: '',
-  //   address: ''
-  // })
-
-  // React.useEffect(() => {
-  //   getPsData(localStorage.getItem('PsId'))
-  // }, [])
-  
-
-  // async function getPsData(userId) {
-
-  //   // console.log(userId)
-  //   try {
-  //     const userResponse = await axios({
-  //       method: 'post',  // Use 'post' method for sending data in the request body
-  //       url: 'https://elasticsearchget.web-project.in/police_stations/_search',
-  //       headers: {
-  //         Authorization: "Basic " + btoa("elastic" + ":" + "ilovePython123@"),
-  //         'Content-Type': 'application/json',
-  //       },
-  //       data: {
-  //         "query": {
-  //           "match": {
-  //             "id": userId
-  //           }
-  //         }
-  //       }
-  //     });
-
-  //     console.log(userResponse.data.hits.hits[0]._source)
-  //     // localStorage.setItem('name', userResponse.data.hits.hits[0]._source.police_station_name)
-  //     setPsData({
-  //       psName: userResponse.data.hits.hits[0]._source.police_station_name,
-  //       address: userResponse.data.hits.hits[0]._source.address
-  //     })
-
-
-  //   } catch (error) {
-  //     console.error('Error:', error);
-  //   }
-  // }
-
   const navigate = useNavigate();
 
   const handleNavigate = () => {

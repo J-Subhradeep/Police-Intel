@@ -18,46 +18,6 @@ const ReviewAnalyticsMain = () => {
 
     const [positivity, setPositivity] = useState({});
 
-    // async function getPsNames() {
-
-    //     try {
-    //         const psResponse = await axios({
-    //             method: 'post',  // Use 'post' method for sending data in the request body
-                // url: `${baseUrls.elasticSearchUrl}/police_stations/_search`,
-    //             headers: {
-    //                 Authorization: "Basic " + btoa("elastic" + ":" + "ilovePython123@"),
-    //                 'Content-Type': 'application/json',
-    //             },
-    //             data: {
-    //                 "size": 100,
-    //                 "query": {
-    //                     "match_all": {}
-    //                 }
-    //             }
-    //         });
-
-
-    //         let policeStationArray = []
-
-    //         //   console.log('Visitor data', psResponse.data.hits.hits[1]);
-
-    //         psResponse.data.hits.hits.forEach(element => {
-    //             policeStationArray.push(
-    //                 {
-    //                     name: element._source.police_station_name,
-    //                     id: element._source.id
-    //                 }
-    //             )
-    //         });
-
-    //         console.log(policeStationArray)
-    //         setPoliceStationNames(policeStationArray)
-
-    //     } catch (error) {
-    //         console.error('Error:', error);
-    //     }
-    // }
-
 
     useEffect(() => {
         // getPsNames();

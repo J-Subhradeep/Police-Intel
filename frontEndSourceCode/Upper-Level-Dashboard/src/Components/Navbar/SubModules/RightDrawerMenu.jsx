@@ -64,7 +64,7 @@ export default function RightDrawerMenu() {
         try {
             const recieved = await axios({
                 method: 'get',
-                url: `https://test.web-project.in/unit/notification/getall/${localStorage.getItem('PsId')}`,
+                url: `*****`,
 
             });
 

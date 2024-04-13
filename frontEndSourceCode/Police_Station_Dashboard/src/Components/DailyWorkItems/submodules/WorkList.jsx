@@ -132,7 +132,7 @@ const WorkList = () => {
         method: 'post',  // Use 'post' method for sending data in the request body
         url: `${baseUrls.elasticSearchUrl}/officer_repository/_search`,
         headers: {
-          Authorization: "Basic " + btoa(elasticSearchUserName + ":" + elasticSearchPassword),
+          Authorization: "Basic " + btoa(config.elasticSearchUserName + ":" + config.elasticSearchPassword),
           'Content-Type': 'application/json',
       },
         data:
@@ -170,7 +170,7 @@ const WorkList = () => {
         method: 'post',  // Use 'post' method for sending data in the request body
         url: `${baseUrls.elasticSearchUrl}/jobs/_search`,
         headers: {
-          Authorization: "Basic " + btoa(elasticSearchUserName + ":" + elasticSearchPassword),
+          Authorization: "Basic " + btoa(config.elasticSearchUserName + ":" + config.elasticSearchPassword),
           'Content-Type': 'application/json',
       },
         data:

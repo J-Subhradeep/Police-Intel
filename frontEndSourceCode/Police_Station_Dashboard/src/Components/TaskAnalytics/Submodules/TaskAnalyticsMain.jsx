@@ -20,46 +20,6 @@ const TaskAnalyticsMain = () => {
 
     const [taskData, setTaskData] = useState({})
 
-    // async function getPsNames() {
-
-    //     try {
-    //         const psResponse = await axios({
-    //             method: 'post',  // Use 'post' method for sending data in the request body
-    //             url: `${baseUrls.elasticSearchUrl}/police_stations/_search`,
-    //             headers: {
-    //                 Authorization: "Basic " + btoa(elasticSearchUserName + ":" + elasticSearchPassword),
-    //                 'Content-Type': 'application/json',
-    //             },
-    //             data: {
-    //                 "size": 100,
-    //                 "query": {
-    //                     "match_all": {}
-    //                 }
-    //             }
-    //         });
-
-
-    //         let policeStationArray = []
-
-    //         //   console.log('Visitor data', psResponse.data.hits.hits[1]);
-
-    //         psResponse.data.hits.hits.forEach(element => {
-    //             policeStationArray.push(
-    //                 {
-    //                     name: element._source.police_station_name,
-    //                     id: element._source.id
-    //                 }
-    //             )
-    //         });
-
-    //         console.log(policeStationArray)
-    //         setPoliceStationNames(policeStationArray)
-
-    //     } catch (error) {
-    //         console.error('Error:', error);
-    //     }
-    // }
-
 
     useEffect(() => {
         // getPsNames();
@@ -394,26 +354,6 @@ const TaskAnalyticsMain = () => {
             <div className='filter-section' style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px', width: '100%', marginTop: '30px' }}>
                 <Typography variant="h6">Filter Options</Typography>
                 <Box sx={{ display: 'flex', flexDirection: 'column', gap: '16px', width: '100%', maxWidth: '400px' }}>
-                    {/* <FormControl >
-                    <InputLabel id="demo-select-small-label">Police Station</InputLabel>
-                    <Select
-                        labelId="demo-select-small-label"
-                        id="demo-select-small"
-                        value={policeStation}
-                        name='name'
-                        label="Police Station"
-                        onChange={handleChange}
-                    >
-                        {policeStationNames.map((ps) => (
-                            <MenuItem
-                                key={ps.id}
-                                value={ps.id}
-                            >
-                                {ps.name}
-                            </MenuItem>
-                        ))}
-                    </Select>
-                </FormControl> */}
 
                     <Box sx={{ display: 'flex', gap: '16px', width: '100%' }}>
                         <TextField

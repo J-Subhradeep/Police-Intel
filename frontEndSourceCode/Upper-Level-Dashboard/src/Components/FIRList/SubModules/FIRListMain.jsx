@@ -20,20 +20,7 @@ const FIRListingMain = ({ FIRs }) => {
   const [page, setPage] = useState(0);
   const rowsPerPage = 5;
 
-  // const handleOpenDialog = (fir) => {
-  //   setSelectedFIR(fir);
-  //   setOpenDialog(true);
-  // };
-
-  // const handleCloseDialog = () => {
-  //   setOpenDialog(false);
-  // };
-
-
   const navigate = useNavigate();
-
-
-  // const firListClick = 
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -69,9 +56,9 @@ const FIRListingMain = ({ FIRs }) => {
                 ? FIRs.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 : FIRs
               ).map((fir) => (
-                <TableRow key={fir.id} hover onClick={() =>{
-    navigate(`/manageFIR/${fir.id}`)
-  }} >
+                <TableRow key={fir.id} hover onClick={() => {
+                  navigate(`/manageFIR/${fir.id}`)
+                }} >
                   <TableCell>{fir.date}</TableCell>
                   <TableCell>{fir.id}</TableCell>
                   <TableCell>{fir.description.slice(0, 20) + (fir.description.length > 20 ? '...' : '')}</TableCell>

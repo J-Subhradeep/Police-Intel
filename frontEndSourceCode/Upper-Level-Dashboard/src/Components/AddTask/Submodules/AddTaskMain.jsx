@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Button from '@mui/material/Button';
 import { styled } from '@mui/system';
 import Task from './Task';
-import ViewTask from '../../ViewAssignedTask/ViewTask';
 import ViewTaskUpdate from '../../ViewTaskUpdate/ViewTaskUpdate';
 
 const StyledButton = styled(Button)({

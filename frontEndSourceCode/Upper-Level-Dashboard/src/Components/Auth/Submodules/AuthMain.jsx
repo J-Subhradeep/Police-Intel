@@ -12,17 +12,8 @@ import Registration from './Register';
 import { color } from '../../../GlobalConfig/config';
 
 const AuthMain = () => {
-    // const [selectedForm, setSelectedForm] = useState('login');
-
-    // const handleToggle = (form) => {
-    //     setSelectedForm(form);
-    // };
 
     const [alertMessage, setAlertMessage] = useState(false)
-
-    // const registerSuccess = () => {
-    //     setAlertMessage(true)
-    // }
 
     return (
         <>

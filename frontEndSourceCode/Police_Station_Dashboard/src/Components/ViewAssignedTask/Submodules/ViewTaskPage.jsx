@@ -349,7 +349,7 @@ const ViewTaskPage = () => {
         headers: {
           Authorization: "Basic " + btoa(config.elasticSearchUserName + ":" + config.elasticSearchPassword),
           'Content-Type': 'application/json',
-      },
+        },
         data:
         {
           "query": {
@@ -417,7 +417,7 @@ const ViewTaskPage = () => {
         headers: {
           Authorization: "Basic " + btoa(config.elasticSearchUserName + ":" + config.elasticSearchPassword),
           'Content-Type': 'application/json',
-      },
+        },
         data: {
           "query": {
             "match": {

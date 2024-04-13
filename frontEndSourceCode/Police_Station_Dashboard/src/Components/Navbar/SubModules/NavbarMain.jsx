@@ -8,6 +8,7 @@ import Grid from '@mui/material/Unstable_Grid2';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import RightDrawerMenu from './RightDrawerMenu';
 import HomeIcon from '@mui/icons-material/Home';
+import { baseUrls, elasticSearchPassword, elasticSearchUserName } from '../../../GlobalConfig/config';
 
 
 import { NavbarMainWrapper } from '../Styles/NavbarMainWrapper';
@@ -32,11 +33,11 @@ const NavbarMain = () => {
     try {
       const userResponse = await axios({
         method: 'post',  // Use 'post' method for sending data in the request body
-        url: 'https://elasticsearchget.web-project.in/police_stations/_search',
+        url: `${baseUrls.elasticSearchUrl}/police_stations/_search`,
         headers: {
-          Authorization: "Basic " + btoa("elastic" + ":" + "ilovePython123@"),
+          Authorization: "Basic " + btoa(elasticSearchUserName + ":" + elasticSearchPassword),
           'Content-Type': 'application/json',
-        },
+      },
         data: {
           "query": {
             "match": {

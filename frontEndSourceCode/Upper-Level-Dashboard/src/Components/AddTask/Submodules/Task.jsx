@@ -6,7 +6,6 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import axios from 'axios';
 import police from '../../../assets/police.webp'
-import RemoveIcon from '@mui/icons-material/Remove';
 import { elasticSearchPassword, elasticSearchUserName } from '../../../GlobalConfig/config';
 
 const profiles = [
@@ -129,7 +128,7 @@ const Task = () => {
         headers: {
           Authorization: "Basic " + btoa(elasticSearchUserName + ":" + elasticSearchPassword),
           'Content-Type': 'application/json',
-      },
+        },
         data:
         {
           "query": {

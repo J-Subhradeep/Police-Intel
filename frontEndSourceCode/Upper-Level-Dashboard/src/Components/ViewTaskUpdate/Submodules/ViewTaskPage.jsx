@@ -407,15 +407,6 @@ const ViewTaskPage = () => {
     setDescription(e.target.value);
   };
 
-  // const handleSearch = async () => {
-  //   // console.log("Searching with the following parameters:");
-  //   // console.log("From Date:", fromDate);
-  //   // console.log("To Date:", toDate);
-  //   // console.log("Status:", status);
-  //   setPage(0);
-  //   fetchTasks();
-  // };
-
   async function fetchTaskUpdateDetails(taskId) {
 
     try {
@@ -469,18 +460,10 @@ const ViewTaskPage = () => {
     setofficerName1(null);
   };
 
-  // const markAsDone = (taskId) => {
-  //   const updatedTasks = tasks.map((task) =>
-  //     task.id === taskId ? { ...task, status: "done" } : task
-  //   );
-  //   setTasks(updatedTasks);
-  // };
-
   return (
     <>
       <div
         style={{
-          // height: "calc(100vh - 4.3rem)",
           width: "100%",
           display: "flex",
           flexDirection: "column",
@@ -639,12 +622,6 @@ const ViewTaskPage = () => {
 
               <DialogActions >
                 <Button onClick={handleCloseDialog}>Close</Button>
-
-                {/* {selectedTask?.status !== true && (new Date(selectedTask?.deadline) > new Date()) && (
-                  <Button variant="contained" onClick={() => {
-                    if (selectedTask?.status !== true)
-                      setStep(2)
-                  }}>Update Task</Button>)} */}
               </DialogActions>
             </Dialog>
           </div>

@@ -28,14 +28,6 @@ const SelectSubordinate = () => {
                 }
             });
 
-            // console.log(psResponse.data.hits.hits[0])
-
-            // const promises = psResponse.data.hits.hits.map(element =>
-            //     getPsNames(element._source.police_station_id)
-            // );
-
-            // await Promise.all(promises);
-
             let arr = [];
 
             psResponse.data.hits.hits.map(element =>
@@ -105,12 +97,6 @@ const SelectSubordinate = () => {
                     </FormControl>
 
                 </Box>
-                {/* <Button sx={{
-                    bgcolor: color.green1,
-                    '&:hover': {
-                        bgcolor: color.green2, // Change to the desired hover color
-                    },
-                }} onClick={handleSubmit} variant='contained'>Submit</Button> */}
             </div>
         </div>
     );

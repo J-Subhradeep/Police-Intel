@@ -138,11 +138,11 @@ const WorkList = () => {
     try {
       const userResponse = await axios({
         method: 'post',  // Use 'post' method for sending data in the request body
-        url: 'https://elasticsearchget.web-project.in/officer_repository/_search',
+        url: `${config.baseUrls.elasticSearchUrl}/officer_repository/_search`,
         headers: {
-          Authorization: "Basic " + btoa("elastic" + ":" + "ilovePython123@"),
+          Authorization: "Basic " + btoa(config.elasticSearchUserName + ":" + config.elasticSearchPassword),
           'Content-Type': 'application/json',
-        },
+      },
         data:
         {
           "query": {
@@ -176,11 +176,11 @@ const WorkList = () => {
     try {
       const userResponse = await axios({
         method: 'post',  // Use 'post' method for sending data in the request body
-        url: 'https://elasticsearchget.web-project.in/jobs/_search',
+        url: `${config.baseUrls.elasticSearchUrl}/jobs/_search`,
         headers: {
-          Authorization: "Basic " + btoa("elastic" + ":" + "ilovePython123@"),
+          Authorization: "Basic " + btoa(config.elasticSearchUserName + ":" + config.elasticSearchPassword),
           'Content-Type': 'application/json',
-        },
+      },
         data:
         {
           "query": {

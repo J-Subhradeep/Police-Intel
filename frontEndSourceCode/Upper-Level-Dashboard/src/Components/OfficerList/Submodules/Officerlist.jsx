@@ -223,12 +223,6 @@ const OfficerList = () => {
             value={searchTextName}
             onChange={handleChangeName}
           />
-          {/* <TextField sx={{marginRight:"20px"}}
-        label="Posting Location"
-        variant="outlined"
-        value={searchTextPosting}
-        onChange={handleChangePosting}
-      /> */}
         </div>
         <Button
           variant="contained"

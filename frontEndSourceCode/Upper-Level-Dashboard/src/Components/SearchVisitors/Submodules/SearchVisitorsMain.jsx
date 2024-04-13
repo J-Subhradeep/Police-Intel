@@ -247,18 +247,6 @@ const SearchVisitorsMain = () => {
 
   async function getVisitingTimesAndVisitors(queries, pageNo, rows) {
 
-    // queries.push({
-    //   "range": {
-    //     "visit_date_time": {
-    //       "gte": dateTimeConversion(dateTime.gte),
-    //       "lte": dateTimeConversion(dateTime.lte)
-    //     }
-    //   }
-    // })
-
-    // console.log('gte:', dateTime.gte)
-    // console.log('gte:', dateTime.lte)
-
     try {
       setLoading(true);
       const visitingTimesResponse = await axios({
@@ -293,8 +281,6 @@ const SearchVisitorsMain = () => {
       console.log('Visit time:', visitingTimesResponse);
 
       setPageCount(visitingTimesResponse.data.hits.total.value)
-
-      // console.log('Visitors:', visitorsResponse.data.hits.hits);
 
       visitingTimesResponse.data.hits.hits.forEach(element => {
         const dateTime = new Date(element._source.visit_date_time);
