@@ -1,0 +1,167 @@
+server:
+  port: 8082
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+spring:
+  application:
+    name: CLOUD-GATEWAY
+    
+#  main:
+#    web-application-type: reactive
+  cloud:
+    gateway:
+      
+#      globalcors:
+#        cors-configurations:
+#          '[/**]':
+#            allowedOrigins: '*'
+#            allowedMethods: '*'
+            
+      routes:
+      - id: PS-PORTAL-SERVICE
+        uri: lb://PS-PORTAL-SERVICE
+        predicates:
+        - Path=/police-admin/**
+        metadata:
+          cors:
+            allowedOrigins: '*'
+            allowedMethods: '*'
+            allowedHeaders: '*'
+            maxAge: 30
+            
+        filters:
+        - PoliceStationAuthenticationFilter
+        
+
+        
+      - id: FIR-MANAGEMENT-SERVICE
+        uri: lb://FIR-MANAGEMENT-SERVICE
+        predicates:
+        - Path=/fir-management/**
+        metadata:
+          cors:
+            allowedOrigins: '*'
+            allowedMethods: '*'
+            allowedHeaders: '*'
+            maxAge: 30
+            
+
+
+      - id: REVIEW-PORTAL-SERVICE
+        uri: lb://REVIEW-PORTAL-SERVICE
+        predicates:
+        - Path=/action/**
+        metadata:
+          cors:
+            allowedOrigins: '*'
+            allowedMethods: '*'
+            allowedHeaders: '*'
+            maxAge: 30 
+            
+      - id: SENTIMENT-ANALYSIS-SERVICE
+        uri: lb://SENTIMENT-ANALYSIS-SERVICE
+        predicates:
+        - Path=/get_sentiment/**
+        metadata:
+          cors:
+            allowedOrigins: '*'
+            allowedMethods: '*'
+            allowedHeaders: '*'
+            maxAge: 30 
+
+      - id: FIR-CATEGORIES-ANALYSIS-SERVICE
+        uri: lb://FIR-CATEGORIES-ANALYSIS-SERVICE
+        predicates:
+        - Path=/fir-categories/**
+
+
+
+      - id: FIR-ANALYSIS-SERVICE
+        uri: lb://FIR-ANALYSIS-SERVICE
+        predicates:
+        - Path=/sections/**
+        metadata:
+          cors:
+            allowedOrigins: '*'
+            allowedMethods: '*'
+            allowedHeaders: '*'
+            maxAge: 30 
+
+      - id: MANAGEMENT-SERVICE
+        uri: lb://MANAGEMENT-SERVICE
+        predicates:
+        - Path=/manage/**
+        metadata:
+          cors:
+            allowedOrigins: '*'
+            allowedMethods: '*'
+            allowedHeaders: '*'
+            maxAge: 30 
+            
+        filters:
+        - SuperAdminAuthenticationFilter
+
+      - id: TASK-MANAGEMENT-SERVICE
+        uri: lb://TASK-MANAGEMENT-SERVICE
+        predicates:
+        - Path=/task/**
+        metadata:
+          cors:
+            allowedOrigins: '*'
+            allowedMethods: '*'
+            allowedHeaders: '*'
+            maxAge: 30 
+
+      - id: SOCIAL-MEDIA-SERVICE
+        uri: lb://SOCIAL-MEDIA-SERVICE
+        predicates:
+        - Path=/social-media/**
+        metadata:
+          cors:
+            allowedOrigins: '*'
+            allowedMethods: '*'
+            allowedHeaders: '*'
+            maxAge: 30 
+        filters:
+        - SocialMediaAuthenticationFilter
+
+        
+        
+      - id: SOCIAL-MEDIA-SERVICE-NOTIFICATION
+        uri: lb://SOCIAL-MEDIA-SERVICE
+        predicates:
+        - Path=/unit/**
+        metadata:
+          cors:
+            allowedOrigins: '*'
+            allowedMethods: '*'
+            allowedHeaders: '*'
+            maxAge: 30 
+
+
+      - id: FILE-SERVICE
+        uri: lb://FILE-SERVICE
+        predicates:
+        - Path=/files/**
+        metadata:
+          cors:
+            allowedOrigins: '*'
+            allowedMethods: '*'
+            allowedHeaders: '*'
+            maxAge: 30 
+
+            
+  
+            
+      - id: WEBSOCKET
+        uri: '****'
+        predicates:
+         - Path=/api/**    
+     
+
+           
+  
